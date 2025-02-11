@@ -24,8 +24,8 @@ jobs:
             java-version: "21"
         
         - name: build jar file
-          run: 
-            chmod +x mvnw
+          run: |
+            chmod +x ./mvnw
             ./mvnw clean package
         
         - name: login to docker hub
@@ -35,9 +35,9 @@ jobs:
             password: ${{ secrets.DOCKER_PASSWORD }}
 
         - name: build docker image
-          run:
+          run: |
             docker build -t angelahbenigno/java-gh:latest .
 
         - name: tag and push to docker hub
-          run:
+          run: |
             docker push angelahbenigno/java-gh:latest
