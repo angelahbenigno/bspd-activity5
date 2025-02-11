@@ -36,8 +36,8 @@ jobs:
 
         - name: build docker image
           run:
-            docker build -t johnreygoh/java-gh:latest .
+            docker build -t angelahbenigno/java-gh:latest .
 
         - name: tag and push to docker hub
           run:
-            docker push johnreygoh/java-gh:latest
+            docker push angelahbenigno/java-gh:latest
